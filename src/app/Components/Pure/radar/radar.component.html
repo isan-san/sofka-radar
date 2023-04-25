@@ -1,0 +1,41 @@
+<h3 class="radar-identifyer">Radar ID: {{radar.radarId}}</h3>
+<div *ngFor="let descriptor of radar.descriptorList" class="radar-component">
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title> {{ descriptor.description }} </mat-panel-title>
+        <mat-panel-description>
+          {{ descriptor.knowledgeArea }}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>This is the primary content of the panel.</p>
+    </mat-expansion-panel>
+    <mat-expansion-panel
+      (opened)="panelOpenState = true"
+      (closed)="panelOpenState = false"
+    >
+      <mat-expansion-panel-header>
+        <mat-panel-title> Knowledge areas </mat-panel-title>
+        <mat-panel-description>
+          Approval level({{ descriptor.approvalLevel }})
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div class="knowled-area">
+        <h4>factual</h4>
+        <h4>{{ descriptor.factual }}</h4>
+      </div>
+      <div class="knowled-area">
+        <h4>conceptual</h4>
+        <h4>{{ descriptor.conceptual }}</h4>
+      </div>
+      <div class="knowled-area">
+        <h4>procedural</h4>
+        <h4>{{ descriptor.procedural }}</h4>
+      </div>
+      <div class="knowled-area">
+        <h4>metacognitive</h4>
+        <h4>{{ descriptor.metacognitive }}</h4>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
