@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Radar } from 'src/app/Models/Radar';
 import { RadarService } from '../../../Services/radar-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-radar-list',
@@ -10,13 +11,15 @@ import { RadarService } from '../../../Services/radar-service.service';
 export class RadarListComponent implements OnInit {
   radars: Radar[] = radars;
 
-  constructor(private radarService: RadarService) {}
+  constructor(private radarService: RadarService, private router: Router) {}
+
+  goRadarId(id: string): void {
+    this.router.navigate(['/radar', id]);
+  }
 
   ngOnInit(): void {
     this.radarService.getAll().subscribe((radars: Radar[]) => {
-      console.log('got the radars');
       this.radars = radars;
-      console.log(radars);
     });
   }
 }

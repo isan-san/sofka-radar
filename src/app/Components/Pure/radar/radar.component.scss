@@ -1,18 +1,41 @@
-.radar-identifyer{
-  font-size: x-large
+.radar-title-content{
+  margin-left: 2rem;
+  .radar-title{
+    font-size: xx-large;
+  }
+  .radar-identifyer {
+    font-size:large;
+  }
 }
-.radar-component {
-  margin: 1rem;
-  .knowled-area {
-    display: flex;
-    align-items: flex-end;
-    padding: 0 4px;
-    margin-top: 8px;
-    justify-content: space-between;
-    border-bottom: 1px solid black;
+.cards-div {
+  box-sizing: border-box;
+  overflow-y: scroll;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 1rem 2rem;
+  justify-content: space-between;
+  gap: 1rem;
+  height: 70%;
+  border-bottom: 1px solid plum;
+  .radar-component {
+    min-width: 48%;
+    flex-shrink: 0;
+    .radar-card-title{
+      background-color: rgba(221, 160, 221, 0.405);
+      font-size: larger;
+    }
+    .knowled-area {
+      display: flex;
+      align-items: flex-end;
+      padding: 0 4px;
+      margin-top: 8px;
+      justify-content: space-between;
+      border-bottom: 1px solid plum;
 
-    *{
-      margin: 0;
+      * {
+        margin: 0;
+      }
     }
   }
 }

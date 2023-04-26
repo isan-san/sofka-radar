@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { NavBarComponent } from './Components/Pure/nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
     RadarComponent,
     RadarListComponent,
     RadarPageComponent,
+    NavBarComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, BrowserAnimationsModule, MatExpansionModule, MatGridListModule],
   providers: [],
