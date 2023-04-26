@@ -22,6 +22,14 @@ export class RadarListComponent implements OnInit {
       this.radars = radars;
     });
   }
+  calculateAverage(radar: Radar): number {
+    return (
+      radar.descriptorList.reduce(
+        (accumulator, descriptor) => accumulator + descriptor.approvalLevel,
+        0
+      ) / radar.descriptorList.length
+    );
+  }
 }
 
 const radars: Radar[] = [

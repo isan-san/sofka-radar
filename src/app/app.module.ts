@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { NavBarComponent } from './Components/Pure/nav-bar/nav-bar.component';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { NavBarComponent } from './Components/Pure/nav-bar/nav-bar.component';
     RadarPageComponent,
     NavBarComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, BrowserAnimationsModule, MatExpansionModule, MatGridListModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, BrowserAnimationsModule, MatExpansionModule, MatGridListModule, MatCardModule],
   providers: [],
   bootstrap: [AppComponent],
 })
