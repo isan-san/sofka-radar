@@ -1,0 +1,46 @@
+.all-form-component{
+  width: 100%;
+  height: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .radar-form-content{
+    margin-top: 1rem;
+    .rada-form-mat{
+      .form-input{
+        width: 100%;
+      }
+    }
+  }
+}
+.add-radar-icon {
+  background-color: plum;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  position: absolute;
+  right: 1rem;
+  overflow: hidden;
+  border: 1px solid rgb(118, 140, 255);
+  box-shadow: 0px 2px 5px grey;
+  &:hover{
+    background-color: whitesmoke;
+  }
+  .horizontal-line {
+    position: relative;
+    width: 100%;
+    height: 0.5rem;
+    background-color: rgb(118, 140, 255);
+    border-radius: 0.25rem;
+    bottom: 1.2rem;
+  }
+  .vertical-line {
+    border-radius: 0.25rem;
+    position: relative;
+    height: 100%;
+    width: 0.5rem;
+    background-color: rgb(118, 140, 255);
+
+    left: 0.75rem;
+  }
+}

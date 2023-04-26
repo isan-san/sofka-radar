@@ -1,8 +1,17 @@
 <div class="radar-list-component">
-  <h2>All radars</h2>
+  <div class="all-radars-header">
+    <h2>All radars</h2>
+    <div class="add-radar-icon" (click)="goNewRadar()">
+      <div class="vertical-line"></div>
+      <div class="horizontal-line"></div>
+    </div>
+  </div>
   <div class="radars-cards">
     <mat-card *ngFor="let radar of radars" class="grid-tile">
-      <mat-card-content (click)="goRadarId(radar.radarId)" class="radar-card-content">
+      <mat-card-content
+        (click)="goRadarId(radar.radarId)"
+        class="radar-card-content"
+      >
         Radar id: {{ radar.radarId }}
         <span class="approval-level"
           >(Average approval level:

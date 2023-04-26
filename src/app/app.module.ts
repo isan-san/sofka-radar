@@ -12,6 +12,9 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { NavBarComponent } from './Components/Pure/nav-bar/nav-bar.component';
 import { MatCardModule } from '@angular/material/card';
+import { NewRadarPageComponent } from './Components/Pages/new-radar-page/new-radar-page.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -20,8 +23,19 @@ import { MatCardModule } from '@angular/material/card';
     RadarListComponent,
     RadarPageComponent,
     NavBarComponent,
+    NewRadarPageComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, BrowserAnimationsModule, MatExpansionModule, MatGridListModule, MatCardModule],
+  imports: [
+    MatFormFieldModule,
+    MatInputModule,
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatExpansionModule,
+    MatGridListModule,
+    MatCardModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

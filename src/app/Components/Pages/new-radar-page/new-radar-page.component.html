@@ -1,0 +1,53 @@
+<div class="all-form-component">
+  <mat-card class="radar-form">
+    <mat-card-header class="header">
+      <mat-card-title> Create a new Radar </mat-card-title>
+      <mat-card-subtitle>
+        Fill the information below and sumbit it to create a new Radar
+      </mat-card-subtitle>
+      <div class="add-radar-icon">
+        <div class="vertical-line"></div>
+        <div class="horizontal-line"></div>
+      </div>
+    </mat-card-header>
+    <mat-card-content class="radar-form-content">
+      <form class="rada-form-mat">
+        <mat-accordion>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>New descriptor</mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-form-field class="form-input form-header-field">
+              <mat-label>knowledge area</mat-label>
+              <input matInput placeholder="Write the knowledge area" value="" />
+            </mat-form-field>
+            <mat-form-field class="form-input">
+              <mat-label>description</mat-label>
+              <input
+                matInput
+                placeholder="Write a short description for the descriptor"
+                value=""
+              />
+            </mat-form-field>
+            <mat-form-field class="form-input">
+              <mat-label>factual</mat-label>
+              <input matInput placeholder="Enter the approval value" value="" />
+            </mat-form-field>
+            <mat-form-field class="form-input">
+              <mat-label>conceptual</mat-label>
+              <input matInput placeholder="Enter the approval value" value="" />
+            </mat-form-field>
+            <mat-form-field class="form-input">
+              <mat-label>procedural</mat-label>
+              <input matInput placeholder="Enter the approval value" value="" />
+            </mat-form-field>
+            <mat-form-field class="form-input">
+              <mat-label>metacognitive</mat-label>
+              <input matInput placeholder="Enter the approval value" value="" />
+            </mat-form-field>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

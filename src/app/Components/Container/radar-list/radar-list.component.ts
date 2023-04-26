@@ -17,6 +17,10 @@ export class RadarListComponent implements OnInit {
     this.router.navigate(['/radar', id]);
   }
 
+  goNewRadar(): void {
+    this.router.navigate(['/radar/new']);
+  }
+
   ngOnInit(): void {
     this.radarService.getAll().subscribe((radars: Radar[]) => {
       this.radars = radars;
