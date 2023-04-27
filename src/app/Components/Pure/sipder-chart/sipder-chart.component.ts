@@ -12,7 +12,6 @@ export class SipderChartComponent {
   @Input() trainingName:string ="";
 
   ngOnInit() {
-    console.log(this.trainingName);
 
     const data = {
       labels: ['Label 1', 'Label 2', 'Label 3', 'Label 4', 'Label 5', 'Label 6'],
@@ -44,8 +43,9 @@ export class SipderChartComponent {
         title: { display: true, text: 'Spider Chart' }
       }
     };
+    console.log(this.trainingName);
 
-    this.chart = new Chart('trainingName', {
+    this.chart = new Chart(this.trainingName, {
       type: 'radar',
       data: data,
       options: options

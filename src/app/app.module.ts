@@ -16,27 +16,24 @@ import { MatCardModule } from '@angular/material/card';
 import { NewRadarPageComponent } from './Components/Pages/new-radar-page/new-radar-page.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { FormsModule } from '@angular/forms';
 import { TrainingListComponent } from './Components/Container/training-list/training-list.component';
 import { TrainingPageComponent } from './Components/Pages/training-page/training-page.component';
 import { TrainingComponent } from './Components/Pure/training/training.component';
 import { SipderChartComponent } from './Components/Pure/sipder-chart/sipder-chart.component';
 import { MainPageComponent } from './Components/Pages/main-page/main-page.component';
 import { LoginComponent } from './Components/Pure/login/login.component';
-import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
-import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideAuth, getAuth } from '@angular/fire/auth';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { NewUserPageComponent } from './Components/Pages/new-user-page/new-user-page.component';
 import { FormUserComponent } from './Components/Pure/form-user/form-user.component';
-import { FlexLayoutModule } from '@angular/flex-layout';
-import {MatSelectModule} from '@angular/material/select';
+import { MatSelectModule } from '@angular/material/select';
 import { UsersPageComponent } from './Components/Pages/users-page/users-page.component';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { UserListComponent } from './Components/Container/user-list/user-list.component';
-
 
 @NgModule({
   declarations: [
@@ -62,7 +59,6 @@ import { UserListComponent } from './Components/Container/user-list/user-list.co
     MatInputModule,
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
@@ -72,7 +68,6 @@ import { UserListComponent } from './Components/Container/user-list/user-list.co
     FormsModule,
     MatIconModule,
     MatButtonModule,
-    FlexLayoutModule,
     MatSelectModule,
     AngularFireDatabaseModule,
     AngularFireModule.initializeApp(environment.firebase),
