@@ -3,18 +3,22 @@ import {
   Auth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-  signOut
+  signOut,
 } from '@angular/fire/auth';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { AngularFireDatabase } from '@angular/fire/compat/database';
+
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
+  constructor(private auth: Auth, private afAuth: AngularFireAuth, private db: AngularFireDatabase) {}
 
-  constructor(private auth: Auth) {}
-
-  register({ email, password }: any) {
-    return createUserWithEmailAndPassword(this.auth, email, password);
+  async register({ email, password, role }: any) {
+    const userCredential = await createUserWithEmailAndPassword(this.auth, email, password);
+    await this.db.object(`users/${userCredential.user.uid}/role`).set(role);
+    return userCredential
   }
 
   login({ email, password }: any) {
