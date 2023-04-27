@@ -15,6 +15,7 @@ import { MatCardModule } from '@angular/material/card';
 import { NewRadarPageComponent } from './Components/Pages/new-radar-page/new-radar-page.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { MatInputModule } from '@angular/material/input';
     MatExpansionModule,
     MatGridListModule,
     MatCardModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
