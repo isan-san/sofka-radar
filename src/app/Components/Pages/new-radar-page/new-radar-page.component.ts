@@ -1,16 +1,19 @@
 import { Component } from '@angular/core';
-import { Descriptor, defaultDescriptio as defaultDescriptior } from 'src/app/Models/Radar';
+import {
+  Descriptor,
+  defaultDescriptio as defaultDescriptior,
+} from 'src/app/Models/Radar';
 
 @Component({
   selector: 'app-new-radar-page',
   templateUrl: './new-radar-page.component.html',
-  styleUrls: ['./new-radar-page.component.scss']
+  styleUrls: ['./new-radar-page.component.scss'],
 })
 export class NewRadarPageComponent {
-  descriptorList:Descriptor[] = [
+  descriptorList: Descriptor[] = [
     {
-      knowledgeArea: "",
-      description: "",
+      knowledgeArea: '',
+      description: '',
       factual: 0,
       conceptual: 0,
       procedural: 0,
@@ -18,10 +21,23 @@ export class NewRadarPageComponent {
       approvalLevel: 0,
     },
   ];
-  addDescriptor(){
-    this.descriptorList.push(defaultDescriptior);
+  addDescriptor() {
+    this.descriptorList.push({
+      knowledgeArea: '',
+      description: '',
+      factual: 0,
+      conceptual: 0,
+      procedural: 0,
+      metacognitive: 0,
+      approvalLevel: 0,
+    });
+    console.log(this.descriptorList);
+
   }
-  removeDescriptor(index:number){
-    this.descriptorList=[...this.descriptorList.slice(0,index-1), ...this.descriptorList.slice(index)];
+  removeDescriptor(index: number) {
+    this.descriptorList = [
+      ...this.descriptorList.slice(0, index - 1),
+      ...this.descriptorList.slice(index),
+    ];
   }
 }
