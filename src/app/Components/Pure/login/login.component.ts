@@ -1,12 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { User } from '@angular/fire/auth';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { AngularFireDatabase } from '@angular/fire/compat/database';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { USER_ROLE } from 'src/app/Models/UserRol';
 import { AuthService } from 'src/app/Services/auth.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
   emailFormControl = new FormControl('', [
@@ -20,24 +24,37 @@ export class LoginComponent {
 
   loginForm: FormGroup;
 
-  constructor(private authService: AuthService, private router: Router) {
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private afAuth: AngularFireAuth,
+    private db: AngularFireDatabase
+  ) {
     this.loginForm = new FormGroup({
       email: this.emailFormControl,
       password: this.passwordFormControl,
     });
   }
 
-  onSubmit() {
-    this.authService
-      .login(this.loginForm.value)
-      .then((response) => {
-        this.router.navigate(['/home']);
-      })
-      .catch((err) => {
-        if (err)
-          this.passwordFormControl.setErrors(
-            new Error('Invalid email or password')
-          );
-      });
+  async onSubmit() {
+    try {
+      const credentials = await this.authService.login(this.loginForm.value);
+      const uid = credentials.user.uid;
+      const roleSnapshot = await this.db
+        .object(`users/${uid}/role`)
+        .query.once('value');
+      const role = roleSnapshot.val();
+      console.log(role);
+      if (role === USER_ROLE.ADMIN) {
+        this.router.navigate(['/users']);
+      } else if (role === USER_ROLE.OPERATION) {
+        this.router.navigate(['/radar']);
+      }
+    } catch (err) {
+      if (err)
+        this.passwordFormControl.setErrors(
+          new Error('Invalid email or password')
+        );
+    }
   }
 }
