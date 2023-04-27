@@ -15,9 +15,9 @@ import { AngularFireDatabase } from '@angular/fire/compat/database';
 export class AuthService {
   constructor(private auth: Auth, private afAuth: AngularFireAuth, private db: AngularFireDatabase) {}
 
-  async register({ email, password, role }: any) {
+  async register({name, email, password, role }: any) {
     const userCredential = await createUserWithEmailAndPassword(this.auth, email, password);
-    await this.db.object(`users/${userCredential.user.uid}/role`).set(role);
+    await this.db.object(`users/${userCredential.user.uid}/role`).set({name ,email , role});
     return userCredential
   }
 

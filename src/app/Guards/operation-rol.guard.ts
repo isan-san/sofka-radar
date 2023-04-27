@@ -21,7 +21,7 @@ export class OperationsRolGuard implements CanActivate {
     }
     const uid = user.uid;
     const roleSnapshot = await this.db.object(`users/${uid}/role`).query.once('value');
-    const role = roleSnapshot.val();
+    const role = roleSnapshot.val().role;
     if (role !== USER_ROLE.OPERATION) {
       this.router.navigate(['/home']);
       return false;

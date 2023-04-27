@@ -19,7 +19,7 @@ export class FormUserComponent {
   constructor(private authService: AuthService, private router: Router) {}
 
   onSave() {
-    this.authService.register({email: this.userForm.value.mail, password: '123456', role: this.userForm.value.role});
+    this.authService.register({name: this.userForm.value.name ,email: this.userForm.value.mail, password: '123456', role: this.userForm.value.role});
     this.router.navigate(['/users'])
   }
 }

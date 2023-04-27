@@ -24,7 +24,7 @@ export class AdminRolGuard implements CanActivate {
     const roleSnapshot = await this.db
       .object(`users/${uid}/role`)
       .query.once('value');
-    const role = roleSnapshot.val();
+    const role = roleSnapshot.val().role;
     if (role !== USER_ROLE.ADMIN) {
       this.router.navigate(['/home']);
       return false;

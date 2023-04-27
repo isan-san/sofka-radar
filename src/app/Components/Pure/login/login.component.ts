@@ -43,8 +43,7 @@ export class LoginComponent {
       const roleSnapshot = await this.db
         .object(`users/${uid}/role`)
         .query.once('value');
-      const role = roleSnapshot.val();
-      console.log(role);
+      const role = roleSnapshot.val().role;
       if (role === USER_ROLE.ADMIN) {
         this.router.navigate(['/users']);
       } else if (role === USER_ROLE.OPERATION) {

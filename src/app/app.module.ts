@@ -30,6 +30,7 @@ import {MatSelectModule} from '@angular/material/select';
 import { UsersPageComponent } from './Components/Pages/users-page/users-page.component';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { UserListComponent } from './Components/Container/user-list/user-list.component';
 
 
 @NgModule({
@@ -45,6 +46,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
     NewUserPageComponent,
     FormUserComponent,
     UsersPageComponent,
+    UserListComponent,
   ],
   imports: [
     MatFormFieldModule,

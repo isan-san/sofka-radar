@@ -1,0 +1,6 @@
+<button mat-raised-button color="primary" routerLink="/users/new">New user</button>
+<ul>
+    <li *ngFor="let user of users$ | async">
+      {{ user.role.name }} - {{ user.role.email }} - {{ user.role.role }}
+    </li>
+  </ul>
