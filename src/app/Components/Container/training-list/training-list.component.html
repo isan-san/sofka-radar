@@ -1,0 +1,23 @@
+<div class="radar-list-component">
+  <div class="all-radars-header">
+    <h2>Your trainings</h2>
+    <div class="add-radar-icon" (click)="goNewTraining()">
+      <div class="vertical-line"></div>
+      <div class="horizontal-line"></div>
+    </div>
+  </div>
+  <div class="radars-cards">
+    <mat-card *ngFor="let training of trainings" class="grid-tile">
+      <mat-card-content
+        (click)="goTrainingId(training.trainingId)"
+        class="radar-card-content"
+      >
+        Training: {{ training.trainingName }}
+        <span class="approval-level"
+          >(Number of apprentices:
+          {{ training.apprenticesList.length }})</span
+        >
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

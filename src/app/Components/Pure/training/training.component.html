@@ -1,0 +1,28 @@
+<div class="radar-title-content">
+  <h2 class="radar-title">Information about the training</h2>
+  <h3 class="radar-identifyer">Training name: {{ training.trainingName }}</h3>
+</div>
+<div class="cards-div">
+  <div *ngFor="let aprentice of aprenticeList" class="radar-component">
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header class="radar-card-title">
+          <mat-panel-title> {{ "WIP" }} </mat-panel-title>
+          <mat-panel-description>
+            {{ "WIP" }}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <p>This is the primary content of the panel.</p>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title> Training chart </mat-panel-title>
+          <mat-panel-description>
+            Approval level({{ "WIP" }})
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <app-sipder-chart class="chart" [trainingName]="aprentice.name"></app-sipder-chart>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+</div>

@@ -16,6 +16,10 @@ import { NewRadarPageComponent } from './Components/Pages/new-radar-page/new-rad
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
+import { TrainingListComponent } from './Components/Container/training-list/training-list.component';
+import { TrainingPageComponent } from './Components/Pages/training-page/training-page.component';
+import { TrainingComponent } from './Components/Pure/training/training.component';
+import { SipderChartComponent } from './Components/Pure/sipder-chart/sipder-chart.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +29,10 @@ import { FormsModule } from '@angular/forms';
     RadarPageComponent,
     NavBarComponent,
     NewRadarPageComponent,
+    TrainingListComponent,
+    TrainingPageComponent,
+    TrainingComponent,
+    SipderChartComponent,
   ],
   imports: [
     MatFormFieldModule,
