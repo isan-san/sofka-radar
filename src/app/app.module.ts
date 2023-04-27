@@ -23,6 +23,14 @@ import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { NewUserPageComponent } from './Components/Pages/new-user-page/new-user-page.component';
+import { FormUserComponent } from './Components/Pure/form-user/form-user.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import {MatSelectModule} from '@angular/material/select';
+import { UsersPageComponent } from './Components/Pages/users-page/users-page.component';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+
 
 @NgModule({
   declarations: [
@@ -34,6 +42,9 @@ import { MatButtonModule } from '@angular/material/button';
     NewRadarPageComponent,
     MainPageComponent,
     LoginComponent,
+    NewUserPageComponent,
+    FormUserComponent,
+    UsersPageComponent,
   ],
   imports: [
     MatFormFieldModule,
@@ -49,6 +60,10 @@ import { MatButtonModule } from '@angular/material/button';
     MatCardModule,
     MatIconModule,
     MatButtonModule,
+    FlexLayoutModule,
+    MatSelectModule,
+    AngularFireDatabaseModule,
+    AngularFireModule.initializeApp(environment.firebase),
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
   ],
