@@ -9,7 +9,7 @@
   <div class="radars-cards">
     <mat-card *ngFor="let radar of radars" class="grid-tile">
       <mat-card-content
-        (click)="goRadarId(radar.radarId)"
+        (click)="goRadarId(radar.radarId!)"
         class="radar-card-content"
       >
         Radar id: {{ radar.radarId }}

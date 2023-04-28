@@ -1,5 +1,5 @@
 export interface Radar {
-  radarId: string;
+  radarId?: string;
   descriptorList: Descriptor[];
 }
 
