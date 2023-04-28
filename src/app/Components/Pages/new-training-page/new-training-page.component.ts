@@ -34,13 +34,13 @@ export class NewTrainingPageComponent {
     })
   }
 
-  onSubmit(){
+  onSubmit(){/*
     var newTraining: Training = {
     }
     this.radarService.create(newRadar)
     .subscribe(
       data => console.log('Succes!', data),
       error => console.log('Error!', error)
-    )
+    )*/
   }
 }

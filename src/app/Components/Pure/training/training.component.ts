@@ -1,7 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ApprenticesList, Training, defaultTraining } from 'src/app/Models/Training';
-import { TrainingServiceService } from 'src/app/Services/training-service.service';
+import {
+  ApprenticesList,
+  Training,
+  defaultTraining,
+} from 'src/app/Models/Training';
+import { TrainingService } from 'src/app/Services/training-service.service';
 import Chart from 'chart.js/auto';
 
 @Component({
@@ -26,20 +30,23 @@ export class TrainingComponent {
       .get(this.route.snapshot.paramMap.get('trainingId') as string)
       .subscribe((training) => {
         this.training = training;
-        this.approvalLevel = calculateAverage(
+        this.approvalLevel = this.calculateAverage(
           training.trainingRadar.descriptorList.map(
             (descriptor) => descriptor.approvalLevel
           )
         );
-        this.actualLevel = calculateAverage(
-          this.aprenticeList.map((aprentice) =>
-            calculateAverage(
-              aprentice.descriptorList.map(
-                (descriptor) => descriptor.approvalLevel
+        this.actualLevel =
+          Math.floor(
+            this.calculateAverage(
+              this.aprenticeList.map((aprentice) =>
+                this.calculateAverage(
+                  aprentice.descriptorList.map(
+                    (descriptor) => descriptor.approvalLevel
+                  )
+                )
               )
-            )
-          )
-        );
+            ) * 10
+          ) / 10;
       });
   }
 
@@ -51,29 +58,29 @@ export class TrainingComponent {
         {
           knowledgeArea: 'string',
           description: 'string',
-          factual: 3,
-          conceptual: 1,
-          procedural: 4,
-          metacognitive: 5,
+          factual: Math.random() * 5,
+          conceptual: Math.random() * 5,
+          procedural: Math.random() * 5,
+          metacognitive: Math.random() * 5,
           approvalLevel: 5,
         },
         {
           knowledgeArea: 'string',
           description: 'string',
-          factual: 5,
-          conceptual: 6,
-          procedural: 7,
-          metacognitive: 8,
-          approvalLevel: 7,
+          factual: Math.random() * 5,
+          conceptual: Math.random() * 5,
+          procedural: Math.random() * 5,
+          metacognitive: Math.random() * 5,
+          approvalLevel: 5,
         },
         {
           knowledgeArea: 'string',
           description: 'string',
-          factual: 1,
-          conceptual: 5,
-          procedural: 6,
-          metacognitive: 1,
-          approvalLevel: 2,
+          factual: Math.random() * 5,
+          conceptual: Math.random() * 5,
+          procedural: Math.random() * 5,
+          metacognitive: Math.random() * 5,
+          approvalLevel: 5,
         },
       ],
     },
@@ -84,29 +91,29 @@ export class TrainingComponent {
         {
           knowledgeArea: 'string',
           description: 'string',
-          factual: 3,
-          conceptual: 1,
-          procedural: 4,
-          metacognitive: 5,
-          approvalLevel: 4,
+          factual: Math.random() * 5,
+          conceptual: Math.random() * 5,
+          procedural: Math.random() * 5,
+          metacognitive: Math.random() * 5,
+          approvalLevel: 5,
         },
         {
           knowledgeArea: 'string',
           description: 'string',
-          factual: 5,
-          conceptual: 6,
-          procedural: 7,
-          metacognitive: 8,
-          approvalLevel: 7,
+          factual: Math.random() * 5,
+          conceptual: Math.random() * 5,
+          procedural: Math.random() * 5,
+          metacognitive: Math.random() * 5,
+          approvalLevel: 5,
         },
         {
           knowledgeArea: 'string',
           description: 'string',
-          factual: 1,
-          conceptual: 5,
-          procedural: 6,
-          metacognitive: 1,
-          approvalLevel: 8,
+          factual: Math.random() * 5,
+          conceptual: Math.random() * 5,
+          procedural: Math.random() * 5,
+          metacognitive: Math.random() * 5,
+          approvalLevel: 5,
         },
       ],
     },
@@ -117,45 +124,58 @@ export class TrainingComponent {
         {
           knowledgeArea: 'string',
           description: 'string',
-          factual: 3,
-          conceptual: 1,
-          procedural: 4,
-          metacognitive: 5,
-          approvalLevel: 4,
-        },
-        {
-          knowledgeArea: 'string',
-          description: 'string',
-          factual: 5,
-          conceptual: 6,
-          procedural: 7,
-          metacognitive: 8,
+          factual: Math.random() * 5,
+          conceptual: Math.random() * 5,
+          procedural: Math.random() * 5,
+          metacognitive: Math.random() * 5,
           approvalLevel: 5,
         },
         {
           knowledgeArea: 'string',
           description: 'string',
-          factual: 1,
-          conceptual: 5,
-          procedural: 6,
-          metacognitive: 1,
-          approvalLevel: 3,
+          factual: Math.random() * 5,
+          conceptual: Math.random() * 5,
+          procedural: Math.random() * 5,
+          metacognitive: Math.random() * 5,
+          approvalLevel: 5,
+        },
+        {
+          knowledgeArea: 'string',
+          description: 'string',
+          factual: Math.random() * 5,
+          conceptual: Math.random() * 5,
+          procedural: Math.random() * 5,
+          metacognitive: Math.random() * 5,
+          approvalLevel: 5,
         },
       ],
     },
   ];
-  calculateAverageForAprentice = (aprentice:ApprenticesList) =>{
-    return calculateAverage(
-      aprentice.descriptorList.map(
-        (descriptor) => descriptor.approvalLevel
-      )
-    )
-  }
+  calculateAverageForAprentice = (aprentice: ApprenticesList) => {
+    return this.calculateAverage(
+      aprentice.descriptorList.flatMap((descriptor) => [descriptor.factual,descriptor.conceptual,descriptor.procedural,descriptor.metacognitive])
+    );
+  };
+  calculateAverage = (scoresList: number[]): number => {
+    return (
+      scoresList.reduce((accumulator, score) => accumulator + score, 0) /
+      scoresList.length
+    );
+  };
+  calculateDescriptorsAverage = (aprentice: ApprenticesList): number[] => {
+    return [
+      this.calculateAverage(
+        aprentice.descriptorList.map((descriptor) => descriptor.factual)
+      ),
+      this.calculateAverage(
+        aprentice.descriptorList.map((descriptor) => descriptor.procedural)
+      ),
+      this.calculateAverage(
+        aprentice.descriptorList.map((descriptor) => descriptor.metacognitive)
+      ),
+      this.calculateAverage(
+        aprentice.descriptorList.map((descriptor) => descriptor.approvalLevel)
+      ),
+    ];
+  };
 }
-const calculateAverage = (scoresList: number[]): number => {
-  return (
-    scoresList.reduce((accumulator, score) => accumulator + score, 0) /
-    scoresList.length
-  );
-};
-

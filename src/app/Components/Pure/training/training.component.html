@@ -26,8 +26,8 @@
         <app-sipder-chart
           class="chart"
           [trainingName]="aprentice.name"
-          [expectedValues]="[3, 2, 4, 4]"
-          [actualValues]="[4, 2, 5, 4]"
+          [expectedValues]="[3, 2, 1, 5]"
+          [actualValues]="calculateDescriptorsAverage(aprentice)"
           [actualScore]="calculateAverageForAprentice(aprentice)"
         ></app-sipder-chart>
       </mat-expansion-panel>

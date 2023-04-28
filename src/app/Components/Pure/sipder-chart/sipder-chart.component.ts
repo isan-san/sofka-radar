@@ -11,18 +11,8 @@ export class SipderChartComponent implements AfterViewInit {
 
   @Input() trainingName: string = '';
   @Input() actualScore: number = 0;
-  @Input() expectedValues: [
-    actual: number,
-    onceptual: number,
-    rocedural: number,
-    etacognitive: number
-  ] = [0, 0, 0, 0];
-  @Input() actualValues: [
-    actual: number,
-    onceptual: number,
-    rocedural: number,
-    etacognitive: number
-  ] = [0, 0, 0, 0];
+  @Input() expectedValues: number[] = [0, 0, 0, 0];
+  @Input() actualValues: number[] = [0, 0, 0, 0];
 
   ngAfterViewInit() {
 
@@ -30,7 +20,7 @@ export class SipderChartComponent implements AfterViewInit {
 
 
     const data = {
-      labels: ['actual', 'onceptual', 'rocedural', 'etacognitive'],
+      labels: ['Factual', 'Conceptual', 'Procedural', 'Metacognitive'],
       datasets: [
         {
           label: 'Expected',
