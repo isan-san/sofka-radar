@@ -6,3 +6,21 @@
   align-items: center;
   margin-bottom: 2rem;
 }
+
+.app-title {
+  display: flex;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #efefef;
+}
+
+.icon {
+  padding: 0 14px;
+  background: none;
+  border: none;
+  max-width: 2.5rem;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}

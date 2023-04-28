@@ -48,6 +48,8 @@ export class LoginComponent {
         this.router.navigate(['/users']);
       } else if (role === USER_ROLE.OPERATION) {
         this.router.navigate(['/radar']);
+      } else if (role === USER_ROLE.COACH) {
+        this.router.navigate(['/training']);
       }
     } catch (err) {
       if (err)

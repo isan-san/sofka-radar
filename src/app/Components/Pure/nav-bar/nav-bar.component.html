@@ -1,3 +1,14 @@
 <div class="all-navbar">
-  <p>Esta es la navbar</p>
+  <mat-toolbar class="all-navbar">
+    <span class="app-title" routerLink="/home"> Apprentice Radar </span>
+    <span class="spacer"></span>
+    <button mat-button color="accent" routerLink="/login" *ngIf="!isSession">
+      <mat-icon>login</mat-icon>
+      <span>Login</span>
+    </button>
+    <button mat-button color="warn" (click)="logOut()" *ngIf="isSession">
+      <mat-icon>logout</mat-icon>
+      <span>Logout</span>
+    </button>
+  </mat-toolbar>
 </div>
