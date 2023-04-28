@@ -73,4 +73,16 @@ export class TrainingComponent {
       ),
     ];
   };
+
+  deleteTraining(trainigId: any) {
+    this.trainingSerive.delete(trainigId).subscribe({
+      next: () => {},
+      error: (err: any) => {
+        console.error(err);
+      },
+      complete: () => {},
+    });
+    alert('Training deleted!')
+    this.router.navigate(['/training'])
+  }
 }
