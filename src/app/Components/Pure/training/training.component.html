@@ -33,7 +33,10 @@
       </mat-expansion-panel>
     </mat-accordion>
   </div>
-  <button mat-raised-button color="accent" routerLink="/radar">
+  <button mat-raised-button routerLink="/training/{{training.trainingId}}/addapprentice">
+    Add Apprentice
+  </button>
+  <button mat-raised-button color="accent" routerLink="/training">
     Go Back
   </button>
   <button mat-raised-button color="warn" (click)="deleteTraining(training.trainingId)">

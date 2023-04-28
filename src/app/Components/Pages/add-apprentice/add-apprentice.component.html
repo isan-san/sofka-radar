@@ -1,0 +1,25 @@
+<div class="all-user-form">
+    <mat-card class="card-fomr">
+      <mat-card-content class="card-content">
+        <form [formGroup]="apprenticeForm" class="save">
+          <mat-form-field>
+            <mat-label>Name: </mat-label>
+            <input matInput placeholder="Insert name" formControlName="name" />
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Mail: </mat-label>
+            <input matInput placeholder="Insert mail" formControlName="email" />
+          </mat-form-field>
+          
+          <div class="actions-container">
+            <button class="button" (click)="onSave()">
+              Save
+            </button>
+            <a routerLink="/users">
+              Go Back
+            </a>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>

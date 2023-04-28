@@ -13,6 +13,7 @@ import { OperationsRolGuard } from './Guards/operation-rol.guard';
 import { AdminRolGuard } from './Guards/admin-rol.guard';
 import { CoachRolGuard } from './Guards/coach-rol.guard';
 import { ErrorPageComponent } from './Components/Pages/error-page/error-page.component';
+import { AddApprenticeComponent } from './Components/Pages/add-apprentice/add-apprentice.component';
 
 const routes: Routes = [
   {
@@ -62,6 +63,11 @@ const routes: Routes = [
   {
     path: 'training/:trainingId',
     component: TrainingComponent,
+    canActivate: [CoachRolGuard],
+  },
+  {
+    path: 'training/:trainingId/addapprentice',
+    component: AddApprenticeComponent,
     canActivate: [CoachRolGuard],
   },
   {

@@ -38,6 +38,7 @@ import { NewTrainingPageComponent } from './Components/Pages/new-training-page/n
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { ErrorPageComponent } from './Components/Pages/error-page/error-page.component';
 import { ErrorComponent } from './Components/Pure/error/error.component';
+import { AddApprenticeComponent } from './Components/Pages/add-apprentice/add-apprentice.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +61,7 @@ import { ErrorComponent } from './Components/Pure/error/error.component';
     NewTrainingPageComponent,
     ErrorPageComponent,
     ErrorComponent,
+    AddApprenticeComponent,
   ],
   imports: [
     MatFormFieldModule,
