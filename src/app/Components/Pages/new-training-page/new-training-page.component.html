@@ -1,0 +1,33 @@
+<div class="all-form-component">
+  <mat-card class="radar-form">
+    <mat-card-header class="header">
+      <mat-card-title>Create a new Trainig</mat-card-title>
+      <mat-card-subtitle>
+        Fill the information below and sumbit it to create a new Training
+      </mat-card-subtitle>
+      <div class="add-radar-icon">
+        <div class="vertical-line"></div>
+        <div class="horizontal-line"></div>
+      </div>
+    </mat-card-header>
+    <mat-card-content class="radar-form-content">
+      <mat-form-field appearance="fill">
+        <mat-label>Training name</mat-label>
+        <input matInput>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Cycle</mat-label>
+        <input matInput>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+      <mat-label>Select Radar</mat-label>
+      <mat-select>
+        <div *ngFor="let radar of l_radar; let index = index">
+          <mat-option value="{{radar.radarId}}">{{radar.radarId}}</mat-option>
+        </div>
+      </mat-select>
+      </mat-form-field>
+      <button class="button" (click)="onSubmit()">Create Training</button>
+    </mat-card-content>
+  </mat-card>
+</div>

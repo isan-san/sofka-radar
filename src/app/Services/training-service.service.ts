@@ -6,7 +6,7 @@ import { Training } from '../Models/Training';
 @Injectable({
   providedIn: 'root'
 })
-export class TrainingServiceService {
+export class TrainingService{
   private readonly baseUrl = 'https://c1-2023-ca-apprenticeradar-production.up.railway.app/api/v1/training';
 
   constructor(private http: HttpClient) { }

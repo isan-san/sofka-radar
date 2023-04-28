@@ -5,6 +5,7 @@ import { RadarComponent } from './Components/Pure/radar/radar.component';
 import { NewRadarPageComponent } from './Components/Pages/new-radar-page/new-radar-page.component';
 import { TrainingPageComponent } from './Components/Pages/training-page/training-page.component';
 import { TrainingComponent } from './Components/Pure/training/training.component';
+import {  NewTrainingPageComponent } from './Components/Pages/new-training-page/new-training-page.component';
 import { MainPageComponent } from './Components/Pages/main-page/main-page.component';
 import { NewUserPageComponent } from './Components/Pages/new-user-page/new-user-page.component';
 import { UsersPageComponent } from './Components/Pages/users-page/users-page.component';
@@ -52,7 +53,7 @@ const routes: Routes = [
   },
   {
     path: 'training/new',
-    component: NewRadarPageComponent,
+    component: NewTrainingPageComponent,
   },
   { path: 'training/:trainingId', component: TrainingComponent },
   // Add more routes here if needed

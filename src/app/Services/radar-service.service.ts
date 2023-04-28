@@ -7,8 +7,7 @@ import { Radar } from '../Models/Radar';
   providedIn: 'root'
 })
 export class RadarService {
-  // private readonly baseUrl = 'https://c1-2023-ca-apprenticeradar-production.up.railway.app/api/v1/radars';
-  private readonly baseUrl = 'http://localhost:8080/api/v1/radars';
+  private readonly baseUrl = 'https://c1-2023-ca-apprenticeradar-production.up.railway.app/api/v1/radars';
 
   constructor(private http: HttpClient) { }
 

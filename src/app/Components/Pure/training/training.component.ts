@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Training, defaultTraining } from 'src/app/Models/Training';
-import { TrainingServiceService } from 'src/app/Services/training-service.service';
+import { TrainingService } from 'src/app/Services/training-service.service';
 import Chart from 'chart.js/auto';
 
 @Component({
@@ -11,7 +11,7 @@ import Chart from 'chart.js/auto';
 })
 export class TrainingComponent {
   constructor(
-    private trainingSerive: TrainingServiceService,
+    private trainingSerive: TrainingService,
     private route: ActivatedRoute,
     private router: Router
   ) {}

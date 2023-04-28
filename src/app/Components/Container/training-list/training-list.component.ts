@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Training } from 'src/app/Models/Training';
-import { TrainingServiceService } from '../../../Services/training-service.service';
+import { TrainingService } from '../../../Services/training-service.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class TrainingListComponent implements OnInit {
   trainings: Training[] = [];
 
-  constructor(private trainingService: TrainingServiceService, private router: Router) {}
+  constructor(private trainingService: TrainingService, private router: Router) {}
 
   goTrainingId(id: string): void {
     this.router.navigate(['/training', id]);
