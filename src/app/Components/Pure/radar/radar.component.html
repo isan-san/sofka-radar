@@ -12,7 +12,6 @@
             {{ descriptor.knowledgeArea }}
           </mat-panel-description>
         </mat-expansion-panel-header>
-        <p>This is the primary content of the panel.</p>
       </mat-expansion-panel>
       <mat-expansion-panel
         (opened)="panelOpenState = true"
@@ -43,4 +42,10 @@
       </mat-expansion-panel>
     </mat-accordion>
   </div>
+  <button mat-raised-button color="accent" routerLink="/radar">
+    Go Back
+  </button>
+  <button mat-raised-button color="warn" (click)="deleteRadar(radar.radarId)">
+    Delete Radar
+  </button>
 </div>

@@ -47,7 +47,7 @@ export class NewTrainingPageComponent {
   }
 
   onSubmit() {
-    if (confirm('Are you sure you want to crete the radar?')) {
+    if (confirm('Are you sure you want to crete the training?')) {
       var newTraining: Training = {
         trainingName: this.training.trainingName,
         trainingCycle: this.training.trainingCycle,
@@ -55,7 +55,7 @@ export class NewTrainingPageComponent {
         apprenticesList: [],
       };
       this.trainingService.create(newTraining).subscribe((trainig: Training) => {
-        alert('Radar created succesfully!');
+        alert('Training created succesfully!');
         this.router.navigate(['/training']);
       });
       this.router.navigate(['/training']);
