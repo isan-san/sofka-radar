@@ -36,6 +36,8 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { UserListComponent } from './Components/Container/user-list/user-list.component';
 import { NewTrainingPageComponent } from './Components/Pages/new-training-page/new-training-page.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { ErrorPageComponent } from './Components/Pages/error-page/error-page.component';
+import { ErrorComponent } from './Components/Pure/error/error.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +58,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     UsersPageComponent,
     UserListComponent,
     NewTrainingPageComponent,
+    ErrorPageComponent,
+    ErrorComponent,
   ],
   imports: [
     MatFormFieldModule,

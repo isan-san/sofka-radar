@@ -12,6 +12,7 @@ import { UsersPageComponent } from './Components/Pages/users-page/users-page.com
 import { OperationsRolGuard } from './Guards/operation-rol.guard';
 import { AdminRolGuard } from './Guards/admin-rol.guard';
 import { CoachRolGuard } from './Guards/coach-rol.guard';
+import { ErrorPageComponent } from './Components/Pages/error-page/error-page.component';
 
 const routes: Routes = [
   {
@@ -62,6 +63,10 @@ const routes: Routes = [
     path: 'training/:trainingId',
     component: TrainingComponent,
     canActivate: [CoachRolGuard],
+  },
+  {
+    path: '**',
+    component: ErrorPageComponent,
   },
   // Add more routes here if needed
 ];
