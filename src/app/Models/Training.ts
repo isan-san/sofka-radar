@@ -1,7 +1,7 @@
 import { Descriptor, Radar } from './Radar';
 
 export interface Training {
-  trainingId: string;
+  trainingId?: string;
   trainingName: string;
   trainingCycle: string;
   trainingRadar: Radar;

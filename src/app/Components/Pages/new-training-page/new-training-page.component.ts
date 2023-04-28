@@ -20,6 +20,17 @@ export class NewTrainingPageComponent {
 
   l_radar: Radar[] = [];
 
+  training: Training =
+    {
+    trainingName: '',
+    trainingCycle: '',
+    trainingRadar: {
+      radarId: '',
+      descriptorList: [],
+    },
+    apprenticesList: [],
+    };
+
   ngOnInit(): void {
     this.fetchData();
   }
@@ -34,13 +45,19 @@ export class NewTrainingPageComponent {
     })
   }
 
-  onSubmit(){/*
-    var newTraining: Training = {
+  onSubmit(){
+    if (confirm('Are you sure you want to crete the radar?')) {
+      var newTraining: Training = {
+        trainingName: this.training.trainingName,
+        trainingCycle: this.training.trainingCycle,
+        trainingRadar: this.training.trainingRadar,
+        apprenticesList: []
+      }
+      console.log(this.training)
+        // this.radarService.create(newRadar).subscribe((radar: Radar) => {
+        //   alert('Radar created succesfully!');
+        //   this.router.navigate(['/radar']);
+        // });
     }
-    this.radarService.create(newRadar)
-    .subscribe(
-      data => console.log('Succes!', data),
-      error => console.log('Error!', error)
-    )*/
   }
 }

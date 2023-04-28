@@ -13,11 +13,11 @@
     <mat-card-content class="radar-form-content">
       <mat-form-field appearance="fill">
         <mat-label>Training name</mat-label>
-        <input matInput>
+        <input matInput name="name" [(ngModel)]="training.trainingName">
       </mat-form-field>
       <mat-form-field appearance="fill">
         <mat-label>Cycle</mat-label>
-        <input matInput>
+        <input matInput name="cycle" [(ngModel)]="training.trainingCycle">
       </mat-form-field>
       <mat-form-field appearance="fill">
       <mat-label>Select Radar</mat-label>
