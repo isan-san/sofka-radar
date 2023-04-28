@@ -5,12 +5,13 @@ import { RadarComponent } from './Components/Pure/radar/radar.component';
 import { NewRadarPageComponent } from './Components/Pages/new-radar-page/new-radar-page.component';
 import { TrainingPageComponent } from './Components/Pages/training-page/training-page.component';
 import { TrainingComponent } from './Components/Pure/training/training.component';
-import {  NewTrainingPageComponent } from './Components/Pages/new-training-page/new-training-page.component';
+import { NewTrainingPageComponent } from './Components/Pages/new-training-page/new-training-page.component';
 import { MainPageComponent } from './Components/Pages/main-page/main-page.component';
 import { NewUserPageComponent } from './Components/Pages/new-user-page/new-user-page.component';
 import { UsersPageComponent } from './Components/Pages/users-page/users-page.component';
 import { OperationsRolGuard } from './Guards/operation-rol.guard';
 import { AdminRolGuard } from './Guards/admin-rol.guard';
+import { CoachRolGuard } from './Guards/coach-rol.guard';
 
 const routes: Routes = [
   {
@@ -25,37 +26,43 @@ const routes: Routes = [
   {
     path: 'radar',
     component: RadarPageComponent,
-    // canActivate: [OperationsRolGuard]
+    canActivate: [OperationsRolGuard],
   },
   {
     path: 'radar/new',
     component: NewRadarPageComponent,
-    // canActivate: [OperationsRolGuard]
+    canActivate: [OperationsRolGuard],
   },
   {
     path: 'radar/:radarId',
     component: RadarComponent,
-    // canActivate: [OperationsRolGuard]
+    canActivate: [OperationsRolGuard],
   },
   {
     path: 'users',
     component: UsersPageComponent,
-    // canActivate: [AdminRolGuard]
+    canActivate: [AdminRolGuard],
   },
   {
     path: 'users/new',
     component: NewUserPageComponent,
-    // canActivate: [AdminRolGuard]
+    canActivate: [AdminRolGuard],
   },
   {
     path: 'training',
     component: TrainingPageComponent,
+    canActivate: [CoachRolGuard],
   },
   {
     path: 'training/new',
     component: NewTrainingPageComponent,
+    canActivate: [CoachRolGuard],
   },
-  { path: 'training/:trainingId', component: TrainingComponent },
+  {
+    path: 'training/:trainingId',
+    component: TrainingComponent,
+    canActivate: [CoachRolGuard],
+  },
   // Add more routes here if needed
 ];
 @NgModule({
