@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApprenticesList, Training, defaultTraining } from 'src/app/Models/Training';
-import { TrainingServiceService } from 'src/app/Services/training-service.service';
+import { TrainingService } from 'src/app/Services/training-service.service';
 import Chart from 'chart.js/auto';
 
 @Component({
