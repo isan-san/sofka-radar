@@ -20,6 +20,8 @@ export class NewTrainingPageComponent {
 
   l_radar: Radar[] = [];
 
+  radarId: string = '';
+
   training: Training = {
     trainingName: '',
     trainingCycle: '',
@@ -49,14 +51,13 @@ export class NewTrainingPageComponent {
       var newTraining: Training = {
         trainingName: this.training.trainingName,
         trainingCycle: this.training.trainingCycle,
-        trainingRadar: this.training.trainingRadar,
+        trainingRadar: this.l_radar.find(radar => radar.radarId! === this.radarId) as Radar,
         apprenticesList: [],
       };
-      console.log(this.training);
-      // this.radarService.create(newRadar).subscribe((radar: Radar) => {
-      //   alert('Radar created succesfully!');
-      //   this.router.navigate(['/radar']);
-      // });
+      this.trainingService.create(newTraining).subscribe((trainig: Training) => {
+        alert('Radar created succesfully!');
+        this.router.navigate(['/training']);
+      });
       this.router.navigate(['/training']);
     }
   }

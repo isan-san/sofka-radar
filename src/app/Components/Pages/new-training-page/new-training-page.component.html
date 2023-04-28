@@ -21,12 +21,10 @@
       </mat-form-field>
       <mat-form-field appearance="fill">
         <mat-label>Select Radar</mat-label>
-        <mat-select>
-          <div *ngFor="let radar of l_radar; let index = index">
-            <mat-option value="{{ radar.radarId }}">{{
+        <mat-select [(ngModel)]="radarId">
+            <mat-option  *ngFor="let radar of l_radar" name="training" value="{{ radar.radarId }}" >{{
               radar.radarId
             }}</mat-option>
-          </div>
         </mat-select>
       </mat-form-field>
       <div class="actions-container">
