@@ -9,7 +9,7 @@ export interface Training {
 }
 
 export interface ApprenticesList {
-  apprenticeId?: string;
+  apprenticeId: string;
   name: string;
   email?: string;
   descriptorList: Descriptor[];
