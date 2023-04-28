@@ -1,9 +1,9 @@
 export interface Radar {
-  radarId: string;
+  radarId?: string;
   descriptorList: Descriptor[];
 }
 
-interface Descriptor {
+export interface Descriptor {
   knowledgeArea: string;
   description: string;
   factual: number;
@@ -16,4 +16,14 @@ interface Descriptor {
 export const defaultRadar: Radar = {
   radarId: '',
   descriptorList: [],
+};
+
+export const defaultDescriptio: Descriptor = {
+  knowledgeArea: '',
+  description: '',
+  factual: 0,
+  conceptual: 0,
+  procedural: 0,
+  metacognitive: 0,
+  approvalLevel: 0,
 };

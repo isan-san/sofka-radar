@@ -1,20 +1,35 @@
-<form [formGroup]="userForm" ngClass="save">
-    <mat-form-field>
-        <mat-label>Name: </mat-label>  <input matInput placeholder="Insert name" formControlName="name"/> 
-    </mat-form-field>
-    <mat-form-field appearance="fill" >
-        <mat-label>Mail: </mat-label> <input matInput placeholder="Insert mail" formControlName="mail"/>
-    </mat-form-field>
-    <mat-form-field appearance="fill">
-        <mat-label>Select a Role: </mat-label>
-        <mat-select [(value)]="role" style="width: 30%;" formControlName="role">
+<div class="all-user-form">
+  <mat-card class="card-fomr">
+    <mat-card-content class="card-content">
+      <form [formGroup]="userForm" class="save">
+        <mat-form-field>
+          <mat-label>Name: </mat-label>
+          <input matInput placeholder="Insert name" formControlName="name" />
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Mail: </mat-label>
+          <input matInput placeholder="Insert mail" formControlName="mail" />
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Select a Role: </mat-label>
+          <mat-select
+            [(value)]="role"
+            formControlName="role"
+          >
             <mat-option value="operation">Operation Leader</mat-option>
             <mat-option value="coach">Coach</mat-option>
             <mat-option value="admin">Admin</mat-option>
           </mat-select>
-    </mat-form-field>
-    <div fxLayoutGap="0.5rem">
-        <button mat-raised-button color="primary" (click)="onSave()">Save</button>
-        <button mat-raised-button color="warn" routerLink="/users">Go Back</button>
-    </div>
-</form>
+        </mat-form-field>
+        <div class="actions-container">
+          <button class="button" (click)="onSave()">
+            Save
+          </button>
+          <a routerLink="/users">
+            Go Back
+          </a>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

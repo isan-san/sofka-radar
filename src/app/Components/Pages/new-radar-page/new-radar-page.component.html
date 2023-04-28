@@ -5,45 +5,80 @@
       <mat-card-subtitle>
         Fill the information below and sumbit it to create a new Radar
       </mat-card-subtitle>
-      <div class="add-radar-icon">
+      <div class="add-radar-icon" (click)="addDescriptor()">
         <div class="vertical-line"></div>
         <div class="horizontal-line"></div>
       </div>
     </mat-card-header>
     <mat-card-content class="radar-form-content">
-      <form class="rada-form-mat">
+      <form
+        class="radar-form-mat"
+        *ngFor="let item of descriptorList; let index = index"
+      >
         <mat-accordion>
           <mat-expansion-panel>
             <mat-expansion-panel-header>
-              <mat-panel-title>New descriptor</mat-panel-title>
+              <div class="remove-radar-icon" (click)="removeDescriptor(index)">
+                <div class="vertical-line"></div>
+                <div class="horizontal-line"></div>
+              </div>
+              <mat-panel-title>{{
+                item.description ? item.description : "New descriptor"
+              }}</mat-panel-title>
             </mat-expansion-panel-header>
-            <mat-form-field class="form-input form-header-field">
-              <mat-label>knowledge area</mat-label>
-              <input matInput placeholder="Write the knowledge area" value="" />
-            </mat-form-field>
             <mat-form-field class="form-input">
               <mat-label>description</mat-label>
               <input
                 matInput
                 placeholder="Write a short description for the descriptor"
-                value=""
+                [(ngModel)]="item.description"
+                [name]="'description'+index+item.description"
+              />
+            </mat-form-field>
+            <mat-form-field class="form-input form-header-field">
+              <mat-label>knowledge area</mat-label>
+              <input
+                matInput
+                placeholder="Write the knowledge area"
+                [(ngModel)]="item.knowledgeArea"
+                [name]="'knowledgeArea'+index+item.description"
               />
             </mat-form-field>
             <mat-form-field class="form-input">
               <mat-label>factual</mat-label>
-              <input matInput placeholder="Enter the approval value" value="" />
+              <input
+                matInput
+                placeholder="Enter the approval value"
+                [(ngModel)]="item.factual"
+                [name]="'factual'+index+item.description"
+              />
             </mat-form-field>
             <mat-form-field class="form-input">
               <mat-label>conceptual</mat-label>
-              <input matInput placeholder="Enter the approval value" value="" />
+              <input
+                matInput
+                placeholder="Enter the approval value"
+                [(ngModel)]="item.conceptual"
+                [name]="'conceptual'+index+item.description"
+              />
             </mat-form-field>
             <mat-form-field class="form-input">
               <mat-label>procedural</mat-label>
-              <input matInput placeholder="Enter the approval value" value="" />
+              <input
+                matInput
+                placeholder="Enter the approval value"
+                [(ngModel)]="item.procedural"
+                [name]="'procedural'+index+item.description"
+              />
             </mat-form-field>
             <mat-form-field class="form-input">
               <mat-label>metacognitive</mat-label>
-              <input matInput placeholder="Enter the approval value" value="" />
+              <input
+                matInput
+                placeholder="Enter the approval value"
+                [(ngModel)]="item.metacognitive"
+                [name]="'metacognitive'+index+item.description"
+              />
             </mat-form-field>
           </mat-expansion-panel>
         </mat-accordion>
