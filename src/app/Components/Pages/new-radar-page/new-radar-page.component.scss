@@ -72,3 +72,22 @@
     top: 0.75rem;
   }
 }
+.button{
+  border: none;
+  margin: 1rem;
+  padding: 0.5rem;
+  font-size: larger;
+  border-radius: 0.25rem;
+  background-color: plum;
+  color: whitesmoke;
+  box-shadow: 1px 1px 5px #0000002e;
+  &:hover{
+    background-color: whitesmoke;
+    border: 1px solid plum;
+    color: black;
+  }
+  &:active{
+    background-color: plum;
+    border: 1px solid purple;
+  }
+}

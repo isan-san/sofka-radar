@@ -3,8 +3,9 @@ import {
   Descriptor,
   defaultDescriptio as defaultDescriptior,
 } from 'src/app/Models/Radar';
-import { RadarService } from 'src/app/Services/radar-service.service'
+import { RadarService } from 'src/app/Services/radar-service.service';
 import { Radar } from '../../../Models/Radar';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-radar-page',
@@ -12,11 +13,7 @@ import { Radar } from '../../../Models/Radar';
   styleUrls: ['./new-radar-page.component.scss'],
 })
 export class NewRadarPageComponent {
-
-  constructor(
-    private radarService: RadarService
-  ){}
-
+  constructor(private radarService: RadarService,private router: Router) {}
 
   descriptorList: Descriptor[] = [
     {
@@ -39,7 +36,6 @@ export class NewRadarPageComponent {
       metacognitive: 0,
       approvalLevel: 0,
     });
-
   }
   removeDescriptor(index: number) {
     this.descriptorList = [
@@ -48,14 +44,23 @@ export class NewRadarPageComponent {
     ];
   }
 
-  onSubmit(){
-    var newRadar: Radar = {
-      descriptorList: this.descriptorList,
+  onSubmit() {
+    if (confirm('Are you sure you want to crete the radar?')) {
+      if (
+        this.descriptorList.find(
+          (descriptior) => descriptior.description === ''
+        )
+      ) {
+        alert('All descriptors must have a description');
+      } else {
+        var newRadar: Radar = {
+          descriptorList: this.descriptorList,
+        };
+        this.radarService.create(newRadar).subscribe((radar: Radar) => {
+          alert('Radar created succesfully!');
+          this.router.navigate(['/radar']);
+        });
+      }
     }
-    this.radarService.create(newRadar)
-    .subscribe(
-      data => console.log('Succes!', data),
-      error => console.log('Error!', error)
-    )
   }
 }
