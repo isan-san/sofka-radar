@@ -1,6 +1,10 @@
-<button mat-raised-button color="primary" routerLink="/users/new">New user</button>
-<ul>
-    <li *ngFor="let user of users$ | async">
+<button class="button" routerLink="/users/new">
+  New user
+</button>
+<div class="all-users">
+  <mat-card class="user-card" *ngFor="let user of users$ | async">
+    <mat-card-content>
       {{ user.role.name }} - {{ user.role.email }} - {{ user.role.role }}
-    </li>
-  </ul>
+    </mat-card-content>
+  </mat-card>
+</div>

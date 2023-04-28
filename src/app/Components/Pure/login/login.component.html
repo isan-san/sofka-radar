@@ -1,5 +1,5 @@
 <form [formGroup]="loginForm">
-    <h1 color="primary">Sing In</h1>
+    <h1 color="primary">Sign In</h1>
     <mat-form-field color="accent" class="form-field">
       <mat-label>Email: </mat-label>
       <input
@@ -23,7 +23,7 @@
         Email is <strong>required!</strong>
       </mat-error>
     </mat-form-field>
-  
+
     <mat-form-field color="accent" class="form-field">
       <mat-label>Password: </mat-label>
       <input
@@ -44,8 +44,8 @@
       </mat-error>
     </mat-form-field>
     <div class="button-group">
-      <button mat-raised-button color="primary" (click)="onSubmit()">
-        Sing in
+      <button class="button" (click)="onSubmit()">
+        Sign in
       </button>
     </div>
   </form>
