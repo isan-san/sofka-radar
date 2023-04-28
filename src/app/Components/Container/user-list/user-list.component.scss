@@ -3,6 +3,9 @@
   &:hover {
     background-color: plum;
     border: 1px solid purple;
+    .role{
+      color: whitesmoke;
+    }
   }
 }
 .all-users{
@@ -23,7 +26,13 @@
     color: black;
   }
   &:active {
-    background-color: plum;
+    background-color: rgba(221, 160, 221, 0.444);
     border: 1px solid purple;
   }
+}
+.role{
+  font-size: smaller;
+  color: plum;
+  margin-left: auto;
+  margin-right: 0;
 }
