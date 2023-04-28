@@ -34,7 +34,7 @@ export class TrainingComponent {
         this.actualLevel =
           Math.floor(
             this.calculateAverage(
-              this.aprenticeList.map((aprentice) =>
+              this.training.apprenticesList.map((aprentice) =>
                 this.calculateAverage(
                   aprentice.descriptorList.map(
                     (descriptor) => descriptor.approvalLevel
@@ -46,107 +46,6 @@ export class TrainingComponent {
       });
   }
 
-  aprenticeList = [
-    {
-      name: 'nombre_1',
-      apprenticeId: '123465789',
-      descriptorList: [
-        {
-          knowledgeArea: 'string',
-          description: 'string',
-          factual: Math.random() * 5,
-          conceptual: Math.random() * 5,
-          procedural: Math.random() * 5,
-          metacognitive: Math.random() * 5,
-          approvalLevel: 5,
-        },
-        {
-          knowledgeArea: 'string',
-          description: 'string',
-          factual: Math.random() * 5,
-          conceptual: Math.random() * 5,
-          procedural: Math.random() * 5,
-          metacognitive: Math.random() * 5,
-          approvalLevel: 5,
-        },
-        {
-          knowledgeArea: 'string',
-          description: 'string',
-          factual: Math.random() * 5,
-          conceptual: Math.random() * 5,
-          procedural: Math.random() * 5,
-          metacognitive: Math.random() * 5,
-          approvalLevel: 5,
-        },
-      ],
-    },
-    {
-      name: 'nombre_2',
-      apprenticeId: '123465789',
-      descriptorList: [
-        {
-          knowledgeArea: 'string',
-          description: 'string',
-          factual: Math.random() * 5,
-          conceptual: Math.random() * 5,
-          procedural: Math.random() * 5,
-          metacognitive: Math.random() * 5,
-          approvalLevel: 5,
-        },
-        {
-          knowledgeArea: 'string',
-          description: 'string',
-          factual: Math.random() * 5,
-          conceptual: Math.random() * 5,
-          procedural: Math.random() * 5,
-          metacognitive: Math.random() * 5,
-          approvalLevel: 5,
-        },
-        {
-          knowledgeArea: 'string',
-          description: 'string',
-          factual: Math.random() * 5,
-          conceptual: Math.random() * 5,
-          procedural: Math.random() * 5,
-          metacognitive: Math.random() * 5,
-          approvalLevel: 5,
-        },
-      ],
-    },
-    {
-      name: 'nombre_3',
-      apprenticeId: '123465789',
-      descriptorList: [
-        {
-          knowledgeArea: 'string',
-          description: 'string',
-          factual: Math.random() * 5,
-          conceptual: Math.random() * 5,
-          procedural: Math.random() * 5,
-          metacognitive: Math.random() * 5,
-          approvalLevel: 5,
-        },
-        {
-          knowledgeArea: 'string',
-          description: 'string',
-          factual: Math.random() * 5,
-          conceptual: Math.random() * 5,
-          procedural: Math.random() * 5,
-          metacognitive: Math.random() * 5,
-          approvalLevel: 5,
-        },
-        {
-          knowledgeArea: 'string',
-          description: 'string',
-          factual: Math.random() * 5,
-          conceptual: Math.random() * 5,
-          procedural: Math.random() * 5,
-          metacognitive: Math.random() * 5,
-          approvalLevel: 5,
-        },
-      ],
-    },
-  ];
   calculateAverageForAprentice = (aprentice: ApprenticesList) => {
     return this.calculateAverage(
       aprentice.descriptorList.flatMap((descriptor) => [descriptor.factual,descriptor.conceptual,descriptor.procedural,descriptor.metacognitive])
