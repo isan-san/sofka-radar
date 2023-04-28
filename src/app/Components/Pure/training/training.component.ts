@@ -13,7 +13,7 @@ export class TrainingComponent {
   constructor(
     private trainingSerive: TrainingService,
     private route: ActivatedRoute,
-    private router:kkkkkkkkkkkkk Router
+    private router: Router
   ) {}
 
   training: Training = defaultTraining;

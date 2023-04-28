@@ -13,21 +13,26 @@
     <mat-card-content class="radar-form-content">
       <mat-form-field appearance="fill">
         <mat-label>Training name</mat-label>
-        <input matInput name="name" [(ngModel)]="training.trainingName">
+        <input matInput name="name" [(ngModel)]="training.trainingName" />
       </mat-form-field>
       <mat-form-field appearance="fill">
         <mat-label>Cycle</mat-label>
-        <input matInput name="cycle" [(ngModel)]="training.trainingCycle">
+        <input matInput name="cycle" [(ngModel)]="training.trainingCycle" />
       </mat-form-field>
       <mat-form-field appearance="fill">
-      <mat-label>Select Radar</mat-label>
-      <mat-select>
-        <div *ngFor="let radar of l_radar; let index = index">
-          <mat-option value="{{radar.radarId}}">{{radar.radarId}}</mat-option>
-        </div>
-      </mat-select>
+        <mat-label>Select Radar</mat-label>
+        <mat-select>
+          <div *ngFor="let radar of l_radar; let index = index">
+            <mat-option value="{{ radar.radarId }}">{{
+              radar.radarId
+            }}</mat-option>
+          </div>
+        </mat-select>
       </mat-form-field>
-      <button class="button" (click)="onSubmit()">Create Training</button>
+      <div class="actions-container">
+        <button class="button" (click)="onSubmit()">Create Training</button>
+        <a routerLink="/training"> Go Back </a>
+      </div>
     </mat-card-content>
   </mat-card>
 </div>
