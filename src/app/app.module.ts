@@ -34,7 +34,6 @@ import { UsersPageComponent } from './Components/Pages/users-page/users-page.com
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { UserListComponent } from './Components/Container/user-list/user-list.component';
-import { NewTrainingPageComponent } from './Pages/new-training-page/new-training-page.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +53,6 @@ import { NewTrainingPageComponent } from './Pages/new-training-page/new-training
     FormUserComponent,
     UsersPageComponent,
     UserListComponent,
-    NewTrainingPageComponent,
   ],
   imports: [
     MatFormFieldModule,
