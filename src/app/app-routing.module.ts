@@ -25,27 +25,27 @@ const routes: Routes = [
   {
     path: 'radar',
     component: RadarPageComponent,
-    canActivate: [OperationsRolGuard]
+    // canActivate: [OperationsRolGuard]
   },
   {
     path: 'radar/new',
     component: NewRadarPageComponent,
-    canActivate: [OperationsRolGuard]
+    // canActivate: [OperationsRolGuard]
   },
   {
     path: 'radar/:radarId',
     component: RadarComponent,
-    canActivate: [OperationsRolGuard]
+    // canActivate: [OperationsRolGuard]
   },
   {
     path: 'users',
     component: UsersPageComponent,
-    canActivate: [AdminRolGuard]
+    // canActivate: [AdminRolGuard]
   },
   {
     path: 'users/new',
     component: NewUserPageComponent,
-    canActivate: [AdminRolGuard]
+    // canActivate: [AdminRolGuard]
   },
   {
     path: 'training',
